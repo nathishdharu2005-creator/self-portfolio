@@ -1,0 +1,359 @@
+/* ========================================== */
+/* 1. CORE THEME VARIABLES & RESET            */
+/* ========================================== */
+:root {
+    --bg-gradient: linear-gradient(135deg, #020617 0%, #0f172a 100%);
+    --card-bg: rgba(30, 41, 59, 0.4);
+    --accent: #38bdf8;
+    --btn-grad: linear-gradient(90deg, #38bdf8, #818cf8);
+    --text-white: #f8fafc;
+    --text-gray: #cbd5e1;
+    --success: #4ade80;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Inter', sans-serif; 
+}
+
+html { scroll-behavior: smooth; }
+
+body { 
+    background: var(--bg-gradient); 
+    color: var(--text-white); 
+    overflow-x: hidden; 
+    font-size: 18px; 
+    line-height: 1.6;
+}
+
+/* ========================================== */
+/* 2. NAVIGATION BAR (STICKY GLASS)           */
+/* ========================================== */
+.navbar { 
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    padding: 1.5rem 10%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background: rgba(2, 6, 23, 0.85); 
+    backdrop-filter: blur(12px); 
+    z-index: 1000; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo { font-size: 1.8rem; font-weight: 800; }
+.logo span { color: var(--accent); }
+
+.nav-links { display: flex; list-style: none; gap: 2.5rem; }
+.nav-links a { 
+    color: white; 
+    text-decoration: none; 
+    font-size: 1.1rem; 
+    transition: 0.3s ease; 
+}
+.nav-links a:hover { color: var(--accent); }
+
+/* ========================================== */
+/* 3. HERO SECTION (BIG TEXT + REVERTED IMG)  */
+/* ========================================== */
+.hero { 
+    height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    padding: 0 10%; 
+}
+
+.hero-container { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%; 
+}
+
+.big-name { 
+    font-size: 5rem; 
+    font-weight: 900; 
+    line-height: 1.1; 
+}
+
+/* Big Constant Profession Font */
+.constant-big-text { 
+    font-size: 2.8rem; 
+    font-weight: 800; 
+    color: var(--accent); 
+    margin: 15px 0 25px 0;
+    line-height: 1.2;
+}
+
+.hero-desc { 
+    color: var(--text-gray); 
+    font-size: 1.2rem; 
+    max-width: 600px; 
+    margin-bottom: 2rem; 
+}
+
+/* REVERTED: Profile image returned to 180x180 */
+.img-frame-big img { 
+    width: 180px; 
+    height: 180px; 
+    object-fit: cover; 
+    border-radius: 24px; 
+    border: 2px solid var(--accent); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* ========================================== */
+/* 4. ACADEMIC & CLOUD (SIDE-BY-SIDE)         */
+/* ========================================== */
+section { padding: 100px 10%; }
+.section-header { font-size: 2.8rem; margin-bottom: 3rem; color: var(--accent); font-weight: 800; }
+
+.card { 
+    background: var(--card-bg); 
+    border-radius: 25px; 
+    padding: 40px; 
+    border: 1px solid rgba(255, 255, 255, 0.05); 
+}
+
+.academic-card { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 40px; 
+}
+
+.academic-info { flex: 1.2; text-align: left; }
+.academic-visuals { flex: 1; display: flex; gap: 15px; justify-content: flex-end; }
+
+.dept-img { 
+    width: 170px; 
+    height: 170px; 
+    border-radius: 15px; 
+    object-fit: cover; 
+    border: 1px solid var(--accent); 
+}
+
+.professional-text { 
+    font-size: 1.2rem; 
+    line-height: 1.8; 
+    color: var(--text-gray); 
+    margin-bottom: 1rem; 
+}
+
+/* ========================================== */
+/* 5. ARTISTRY & WORK                         */
+/* ========================================== */
+.dance-layout { display: flex; align-items: center; gap: 40px; }
+
+/* 50px Artistic Quote */
+.quote { 
+    font-size: 50px !important; 
+    font-weight: 900; 
+    color: var(--accent); 
+    line-height: 1.2; 
+    margin-bottom: 20px; 
+}
+
+.art-img { 
+    width: 300px; 
+    height: 400px; 
+    object-fit: cover; 
+    border-radius: 20px; 
+}
+
+.project-card { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.project-previews-rect { 
+    display: flex; 
+    gap: 30px; 
+    margin-top: 30px; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+}
+.rect-proj-img { 
+    width: 450px; 
+    height: 260px; 
+    object-fit: cover; 
+    border-radius: 15px; 
+    border: 2px solid var(--accent); 
+}
+
+/* ========================================== */
+/* 6. SPORTS EXCELLENCE                       */
+/* ========================================== */
+.excellence-card { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 40px; 
+    margin-bottom: 40px; 
+}
+
+.excellence-content { flex: 1.2; }
+
+.professional-impact { 
+    font-size: 1.1rem; 
+    color: var(--success); 
+    font-family: monospace; 
+    font-weight: 700; 
+    border-left: 3px solid var(--accent); 
+    padding-left: 15px; 
+    margin: 15px 0; 
+}
+
+.sport-rect-img { 
+    width: 350px; 
+    height: 250px; 
+    object-fit: contain; 
+    background: #000; 
+    border-radius: 15px; 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.achievement-tags { display: flex; gap: 10px; flex-wrap: wrap; }
+.tag { background: #222; padding: 8px 20px; border-radius: 10px; font-weight: bold; }
+
+/* ========================================== */
+/* 7. PREMIUM EXECUTIVE CONTACT SECTION       */
+/* ========================================== */
+footer {
+    background: #000;
+    padding: 100px 10% 40px 10%;
+    border-top: 1px solid rgba(56, 189, 248, 0.1);
+}
+
+.premium-contact-card {
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(2, 6, 23, 0.95));
+    border-radius: 40px;
+    padding: 60px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+
+
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    width: 100%;
+}
+
+.method-item { display: flex; align-items: center; gap: 20px; }
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+    background: rgba(56, 189, 248, 0.1);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    color: var(--accent);
+    font-size: 1.5rem;
+}
+
+.method-info span {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 4px;
+    font-weight: 800;
+}
+
+.contact-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.2), transparent);
+}
+
+.social-pills-premium {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.premium-pill {
+    padding: 12px 35px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    gap: 10px;
+    transition: 0.4s;
+}
+
+.premium-pill:hover {
+    background: white;
+    color: black;
+    transform: translateY(-5px);
+}
+
+.footer-bottom { margin-top: 60px; text-align: center; color: var(--text-gray); font-size: 0.9rem; }
+
+/* ========================================== */
+/* 8. MOBILE RESPONSIVE QUERIES               */
+/* ========================================== */
+@media (max-width: 992px) {
+    section { padding: 80px 5%; }
+    .navbar { flex-direction: column; padding: 1rem; gap: 10px; }
+    .hero-container, .academic-card, .excellence-card, .dance-layout, .contact-methods { 
+        flex-direction: column; 
+        text-align: center; 
+    }
+    
+    .big-name { font-size: 3rem; }
+    .constant-big-text { font-size: 1.8rem; }
+    
+    .academic-visuals, .excellence-visual, .icon-box { 
+        justify-content: center; 
+        width: 100%; 
+    }
+    
+    .dept-img, .sport-rect-img { width: 100%; max-width: 320px; height: auto; }
+    .quote { font-size: 35px !important; }
+}
+
+/* ========================================== */
+/* 9. UTILITY CLASSES                         */
+/* ========================================== */
+.btn-gradient { 
+    padding: 1rem 2.5rem; 
+    background: var(--btn-grad); 
+    color: #000; 
+    border-radius: 50px; 
+    font-weight: 800; 
+    text-decoration: none; 
+    display: inline-block; 
+}
+
+.btn-outline { 
+    padding: 1rem 2.5rem; 
+    border: 1px solid var(--accent); 
+    color: var(--accent); 
+    border-radius: 50px; 
+    text-decoration: none; 
+    margin-left: 1.5rem; 
+    display: inline-block; 
+}
+
+.reveal { 
+    opacity: 0; 
+    transform: translateY(30px); 
+    transition: 1s ease-out; 
+}
+.reveal.active { opacity: 1; transform: translateY(0); }
